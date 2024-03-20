@@ -1,4 +1,4 @@
- [
+const data = [
   {
     "company": "AACI - ARMADA ACQUISITION CORP I",
     "ticker": "AACI",
@@ -50940,3 +50940,5 @@
     "capex": "-91000"
   }
 ]
+
+module.exports = { data: data };

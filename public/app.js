@@ -13,12 +13,14 @@ function addForm() {
 
 
 
-document.querySelectorAll(".delete-btn")(button=>{
-  button.addEventListener("click",function(){
-    const form = button.closest("form");
-    form.submit();
-  })
-})
+  document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll('.delete-btn').forEach(item => {
+        item.addEventListener('click', event => {
+            const formBar = item.closest('.block1');
+            formBar.style.display = 'none';
+        });
+    });
+});
 
 
 

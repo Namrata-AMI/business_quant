@@ -1,22 +1,30 @@
 const mongoose = require("mongoose");
 
-const business = new mongoose.Schema({
+const businessSchema = new mongoose.Schema({
+    company:{
+        type:String,
+    },
+    
+    ticker:{
+        type:String
+    },
+
     revenue:{
         type:Number
     },
 
-    gross_profit:{
+    gp:{
         type:Number
     },
 
-    floating_cost:{
+    fcf:{
         type:Number
     },
 
-    capital_expenditure:{
+    capex:{
         type:Number
     }
 });
 
-const value = mongoose.model("Value",business);
+const value = mongoose.model("Value",businessSchema);
 module.exports = value;

@@ -30,7 +30,7 @@ body{
 .block1{
     background-color:azure;
     border: 2px solid blanchedalmond;
-    height:10rem;
+    height:14rem;
     margin-left: 10rem;
     display: block;
     transition: height 0.3s ease;
@@ -42,19 +42,13 @@ body{
 }
 
 .select_revenue select {
-    width: 140px; 
+    width: 180px; 
     margin:2rem;
 }
 
 .plus{
     margin-top:2rem;
-    margin-left:2rem;
-}
-
-.close{
-    margin-top: -3.3rem;
-    margin-left: 50rem;
-    margin-right:2rem;
+    margin-left:3rem;
 }
 
 
