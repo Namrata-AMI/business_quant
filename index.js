@@ -6,6 +6,7 @@ const methodOverride = require("method-override");
 const value = require("./modal/main.js");
 const ejsMate = require("ejs-mate");
 //const fs = require('fs');
+const wrapAsync = require("./utils/wrapAsync.js")
 const data = require("./modal/data.js")
 
 app.set("views",path.join(__dirname,"views"));
@@ -36,13 +37,13 @@ app.get("/",(req,res)=>{
 
 
 //index route
-app.get('/quant',async(req,res)=>{
+app.get('/quant',wrapAsync(async(req,res)=>{
   let values = await value.find({}); 
     res.render("show.ejs",{values});
-}); 
+})); 
 
 
-  app.post("/quant/filter", async (req, res) => {
+  app.post("/quant/filter", wrapAsync(async (req, res) => {
     try {
         const { ticker } = req.body;        
         const result = await value.find({ ticker: ticker });
@@ -55,7 +56,7 @@ app.get('/quant',async(req,res)=>{
         console.error("Error:", error);       // to handle the erroes
       res.status(500).send("Internal Server Error");
   }
-});
+}));
 
 
 
